@@ -12,8 +12,8 @@ email=rosan@neillygroup.com.au
 
 about=Copies path of the layer to clipboard.
 
-tracker=http://bugs
-repository=http://repo
+tracker=https://github.com/enigmarosan/Qgis-Plugin/issues
+repository=https://github.com/enigmarosan/Qgis-Plugin
 # End of mandatory metadata
 
 # Recommended items:

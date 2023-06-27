@@ -12,6 +12,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QAction, QToolBar
 from qgis.core import QgsProject, Qgis
 from PyQt5.Qt import QApplication
+import os
 # Initialize Qt resources from file resources.py
 from .resources import *
 
@@ -21,8 +22,11 @@ class FilePath:
         self.iface = iface
 
     def initGui(self):
+        # Specify the absolute path of the icon
+        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.png")
+
         # Create action that will start plugin configuration
-        self.action = QAction(QIcon("icon.png"), "Copy file path", self.iface.mainWindow())
+        self.action = QAction(QIcon(icon_path), "Copy file path", self.iface.mainWindow())
         self.action.triggered.connect(self.copy_layer_path)
 
         # Create a new toolbar named "File Path Toolbar" and add the action to it
